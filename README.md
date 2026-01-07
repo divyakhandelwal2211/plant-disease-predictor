@@ -46,7 +46,7 @@ Follow these steps to set up the project, train the model, and launch the Stream
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/vinayiet/plant-disease-predictor.git
+git clone https://github.com/divyakhandelwal2211/plant-disease-predictor.git
 cd plant-disease-predictor
 ```
 
@@ -55,11 +55,11 @@ cd plant-disease-predictor
 ### 2. Create a Virtual Environment
 
 ```bash
-# Create environment with Python 3.10
-conda create --name plant_env python=3.10
+# Create virtual environment
+python -m venv venv
 
-# Activate the environment
-conda activate plant_env
+# Activate the virtual environment (Windows)
+venv\Scripts\activate
 ```
 
 ---
@@ -78,6 +78,7 @@ numpy
 scikit-learn
 matplotlib
 streamlit
+seaborn
 ```
 
 ---

@@ -1,13 +1,12 @@
 import streamlit as st
 import pandas as pd
-import numpy as np
 import pickle
 
 # Load trained model
 with open('plant_disease_detection_model.pkl', 'rb') as f:
     model = pickle.load(f)
 
-# Streamlit UI
+# Streamlit UI config
 st.set_page_config(page_title="🌾 Plant Disease Predictor", layout="centered")
 
 st.title("🌱 Plant Disease Prediction App")
@@ -21,14 +20,16 @@ soil_pH = st.number_input("🧪 Soil pH", min_value=0.0, max_value=14.0, value=6
 
 # Predict button
 if st.button("🔍 Predict"):
-    input_data = np.array([[temperature, humidity, rainfall, soil_pH]])
+    # Create DataFrame with feature names (fixes warning)
+    input_data = pd.DataFrame(
+        [[temperature, humidity, rainfall, soil_pH]],
+        columns=['temperature', 'humidity', 'rainfall', 'soil_pH']
+    )
+
     prediction = model.predict(input_data)
 
     if prediction[0] == 1:
-        # red text
         st.error("🚨 The plant is likely to be **Diseased**.")
     else:
-        # green text
         st.success("✅ The plant is likely to be **Healthy**.")
-
 
