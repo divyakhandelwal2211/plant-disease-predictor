@@ -133,6 +133,10 @@ Click **"Predict Disease Status"** to get a prediction:
 * Smart farming platforms
 * Weather-based plant disease alert systems
 * Precision agriculture dashboards
+---
+
+## 📌 Credits
+This project is adapted and enhanced from an open-source implementation for learning and educational purposes.
 
 ---
 
@@ -141,3 +145,6 @@ Click **"Predict Disease Status"** to get a prediction:
 Contributions are welcome! Fork the project and submit pull requests for improvements.
 
 ---
+
+## 🚀 Live demo
+https://plant-disease-prediction-asd22.streamlit.app/
